@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+		<title>Photon by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="compiled/flipclock.js"></script>
+<link rel="stylesheet" href="compiled/flipclock.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<div class="inner">
+					<span class="icon solid major fa-heart"></span>
+					<h1>Love has fallen for<br /></h1>
+					<h1 id="timer"></h1>
+					<p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
+					lobortis feugiat sapien sed etiam volutpat accumsan.</p>
+					<ul class="actions special">
+						<li><a href="#one" class="button scrolly">Discover</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<div class="row gtr-150">
+		<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=19prvqDgLDGHDhWgi9TsiopgejOqwTSQgnFNHdzfNn5k&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+					</div>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+<script>
+	var eventDate  = new Date("Mar 21, 2019 9:00 PM EDT");
+
+
+	var x = setInterval(function(){
+
+		var currentDate = new Date();
+
+		// Calculate the difference in seconds between the future and current date
+		var distance = currentDate.getTime() - eventDate.getTime();
+
+		// Calculate day difference and apply class to .clock for extra digit styling.
+		function dayDiff(first, second) {
+			return (second - first) / (1000 * 60 * 60 * 24);
+		}
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+			+ minutes + "m " + seconds + "s ";
+		});
+</script>
+
+	</body>
+</html>
